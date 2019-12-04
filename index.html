@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jason's App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- DOM IS document object model === the entire webpage -->
+    <header class="uk-flex uk-flex-left uk-background-secondary">
+      <h1>Crypto Coins</h1>
+    </header>
+    <!-- List of Coins -->
+    <section class="input-stuff">
+      <select class="coins">
+        <option value="btc-bitcoin">btc-bitcoin</option>
+        <option value="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+      </select>
+      <input type="text" placeholder="year-month-date">  
+      <button class="date">Click me</button>
+    </section>
+
+
+    <section class="uk-flex uk-flex-left uk-background-secondary uk-text-muted coin-container">
+      <ul class = "coin-list"></ul>
+    </section>
+    <section class = "uk-flex uk-flex-left uk-background-secondary uk-text-muted history-container">
+      <strong>Close Value History: </strong>
+      <ul class = "history-list"> </ul>
+    </section>
+
+    <!-- YOU NEED THIS TO DO CHARTJS THINGS -->
+    <!-- <section class="chart">
+      <canvas id="myChart" width="400" height="400"></canvas>
+    </section> -->
+
+    <footer class="uk-flex uk-flex-center uk-background-secondary uk-text-primary foot">
+      Contact me at jasonzhang@umass.edu
+    </footer>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
