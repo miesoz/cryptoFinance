@@ -8,40 +8,59 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 </head>
 <body>
   <div class="app">
     <!-- DOM IS document object model === the entire webpage -->
-    <header class="uk-flex uk-flex-left uk-background-secondary">
+    <header class="uk-flex uk-flex-left uk-background-muted">
       <h1>Crypto Coins</h1>
     </header>
+
+    <!--Table of coins and market values-->
+    <table class="uk-table uk-table-hover uk-table-striped uk-table-small">
+      <caption>Cryptocurrencies by Marketcap</caption>
+      <thead>
+          <tr>
+              <th class="uk-width-small">Name</th>
+              <th class="uk-width-small">Price</th>
+              <th class="uk-width-small">Growth %</th>
+              <th class="uk-width-small">Market Cap</th>
+          </tr>
+      </thead>
+
+      <tbody class="tableData">
+    <!-- <tr> 
+              <td>Bitcoin</td>
+              <td>2 dollas</td>
+              <td>2 purcent</td>
+              <td>infinity</td>
+          </tr>
+          <tr> 
+              <td>Ethreum</td>
+          </tr>
+          <tr>
+              <td>XRP</td>
+          </tr>
+    -->
+      </tbody>
+    </table>
+    
     <!-- List of Coins -->
     <section class="input-stuff">
-      <select class="coins">
-        <option value="btc-bitcoin">btc-bitcoin</option>
-        <option value="saab">Saab</option>
-        <option value="opel">Opel</option>
-        <option value="audi">Audi</option>
-      </select>
-      <input type="text" placeholder="year-month-date">  
-      <button class="date">Click me</button>
+      <select class="coins" onchange="plot(this);">
+        <option selected = "selected">Select a Coin to Plot</option>
+      </select> 
+      <!--<button class="coinChoice">Enter</button> -->
     </section>
 
-
-    <section class="uk-flex uk-flex-left uk-background-secondary uk-text-muted coin-container">
-      <ul class = "coin-list"></ul>
-    </section>
-    <section class = "uk-flex uk-flex-left uk-background-secondary uk-text-muted history-container">
-      <strong>Close Value History: </strong>
-      <ul class = "history-list"> </ul>
-    </section>
 
     <!-- YOU NEED THIS TO DO CHARTJS THINGS -->
-    <!-- <section class="chart">
+    <section class="chart">
       <canvas id="myChart" width="400" height="400"></canvas>
-    </section> -->
+    </section>
 
-    <footer class="uk-flex uk-flex-center uk-background-secondary uk-text-primary foot">
+    <footer class="uk-flex uk-flex-center uk-text-primary foot">
       Contact me at jasonzhang@umass.edu
     </footer>
   </div>
